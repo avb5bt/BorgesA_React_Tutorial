@@ -8,6 +8,15 @@ body {
     padding-left: 30px;
   }
 
+  .header {
+    padding: .5%;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5%;
+  }
+
   .button {
     background-color: #466365; 
     border: none;
