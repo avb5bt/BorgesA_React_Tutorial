@@ -85,7 +85,10 @@ function Square(props){
           'Go to game start';
         return(
           <li>
-            <button onClick={() => this.jumpTo(move)}>
+            <button 
+              onClick={() => this.jumpTo(move)}
+              className="button"
+            >
               {desc}
             </button>
           </li>
