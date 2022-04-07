@@ -24,7 +24,6 @@ function Square(props){
     }
   
     render() {
-  
       return (
         <div>
           <div className="board-row">
@@ -100,6 +99,7 @@ function Square(props){
       const current=history[this.state.stepNumber];
       const winner=calculateWinner(current.squares);
 
+      const recentMove=`[r: ${this.state.rowMove}, c: ${this.state.colMove}]`;
       //console.log('math: '+i%3);
       const moves = history.map((step,move) =>{
         const desc = move ?
@@ -124,7 +124,6 @@ function Square(props){
         status='Next player: '+ (this.state.xIsNext ? 'X' : 'O');
       }
 
-      const recentMove='[row: '+this.state.rowMove+', col: '+this.state.colMove+']';
       return (
         <><div className="header">
           <h1>Ana's Tic-Tac-Toe</h1>
