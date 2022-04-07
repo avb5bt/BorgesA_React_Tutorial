@@ -40,19 +40,25 @@ body {
     margin-bottom: 10px;
   }
   
+.move{
+  text-align: center;
+  margin-top: 5%;
+  font-weight: bold;
+}
+
   .square {
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 24px;
+    font-size: 15px;
     font-weight: bold;
-    line-height: 34px;
-    height: 50px;
+    line-height: 40px;
+    height: 40px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 50px;
+    width: 40px;
   }
   
   .square:focus {

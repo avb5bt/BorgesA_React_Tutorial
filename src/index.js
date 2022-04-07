@@ -56,6 +56,8 @@ function Square(props){
         }],
         stepNumber: 0,
         xIsNext: true,
+        //colMove:0,
+        //rowMove:0,
       };
     }
     
@@ -68,6 +70,14 @@ function Square(props){
         return;
       }
       squares [i]=this.state.xIsNext ? 'X' : 'O';
+
+      this.setState((state) => {
+        return{
+          colMove: i%3,
+          rowMove: Math.floor(i/3),
+        }
+      });
+
       this.setState({
         history: history.concat([{
           squares: squares,
@@ -85,10 +95,12 @@ function Square(props){
     }
 
     render() {
+      //console.log(i);
       const history=this.state.history;
       const current=history[this.state.stepNumber];
       const winner=calculateWinner(current.squares);
-      
+
+      //console.log('math: '+i%3);
       const moves = history.map((step,move) =>{
         const desc = move ?
           'Go to move #' + move :
@@ -111,6 +123,8 @@ function Square(props){
       } else{
         status='Next player: '+ (this.state.xIsNext ? 'X' : 'O');
       }
+
+      const recentMove='[row: '+this.state.rowMove+', col: '+this.state.colMove+']';
       return (
         <><div className="header">
           <h1>Ana's Tic-Tac-Toe</h1>
@@ -125,7 +139,11 @@ function Square(props){
               <div>{status}</div>
               <ol>{moves}</ol>
             </div>
-          </div></>
+        </div>
+        <div className="move">
+              {recentMove}
+        </div>
+        </>
       );
     }
   }
