@@ -66,6 +66,8 @@ body {
   .game {
     display: flex;
     flex-direction: row;
+    margin: auto;
+    width: 25%;
   }
   
   .game-info {
